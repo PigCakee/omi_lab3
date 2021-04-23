@@ -40,10 +40,6 @@ def parse_proto_example(proto):
   return example['image'], tf.one_hot(example['image/label'], depth=NUM_CLASSES)
 
 
-def normalize(image, label):
-  return tf.image.per_image_standardization(image), label
-
-
 def create_dataset(filenames, batch_size):
   """Create dataset from tfrecords file
   :tfrecords_files: Mask to collect tfrecords file of dataset
